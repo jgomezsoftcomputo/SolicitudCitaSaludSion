@@ -1,4 +1,4 @@
-var email_ips = "jgomez.softcomputo@gmail.com";
+var email_ips = "gerencia@softcomputo.com.co";
 
 var app = angular.module('solicitudCita', []);
 
