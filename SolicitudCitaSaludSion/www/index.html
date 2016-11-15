@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="solicitudCita">
+<head>
+	<meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <title>Solicitud de citas</title>
+
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+</head>
+<body ng-controller="SolicitudCitaController">
+	<div class="container app">
+		<h2 class="text-center">Solicitar cita</h2>
+		<form name="formCita" ng-submit="solicitarCita()">
+			<div class="form-group">
+				<label for="identificacion">Identificaci&oacute;n:</label>
+				<input type="text" class="form-control" name="identificacion" id="identificacion" placeholder="Identificaci&oacute;n" ng-model="cita.identificacion" pattern="\d{7,}" oninvalid="setCustomValidity('Debe especificar un formato de identificación válida!!!')" oninput="setCustomValidity('')"/>
+			</div>
+			<div class="form-group">
+				<label for="nombre">Nombre:</label>
+				<input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre" required ng-model="cita.nombre"/>
+			</div>
+			<div class="form-group">
+				<label for="email">Email:</label>
+				<input type="email" class="form-control" name="email" id="email" placeholder="Email" required ng-model="cita.email"/>
+			</div>
+			<div class="form-group">
+				<label for="telefono">Teléfono:</label>
+				<input type="text" class="form-control" name="telefono" id="telefono" placeholder="Teléfono" ng-model="cita.telefono" pattern="\d{7,}" oninvalid="setCustomValidity('Debe especificar un formato de teléfono válido!!!')" oninput="setCustomValidity('')"/>
+			</div>
+			<div class="form-group">
+				<label for="aseguradora">Aseguradora:</label>
+				<select id="aseguradora" class="form-control" ng-model="cita.aseguradora" required>
+			  		<option value="">--Seleccione--</option>
+			  		<option ng-repeat="aseguradora in aseguradoras" value="{{aseguradora.nombre}}">{{aseguradora.nombre}}</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="servicio">Servicio:</label>
+				<select id="servicio" class="form-control" ng-model="cita.servicio" required>
+			  		<option value="">--Seleccione--</option>
+			  		<option ng-repeat="servicio in servicios" value="{{servicio.nombre}}">{{servicio.nombre}}</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="fecha">Fecha esperada cita:</label>
+				<input type="date" class="form-control" name="fecha" id="fecha" placeholder="dd/mm/aaaa" required ng-model="cita.fecha" min="{{cita.fechaActual | date:'yyyy-MM-dd'}}"/>
+			</div>
+			<div class="form-group text-center">
+				<input type="submit" class="btn btn-large btn-success" value="Solicitar Cita"/>
+			</div>
+		</form>
+	</div>
+    <script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript" src="http://192.168.1.27:8080/target/target-script-min.js#anonymous"></script>
+	<script type="text/javascript" src="js/jquery-3.1.1.slim.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/moment.min.js"></script>
+
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
