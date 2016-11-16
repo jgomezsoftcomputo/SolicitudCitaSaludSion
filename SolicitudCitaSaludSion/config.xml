@@ -1,62 +1,37 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<widget xmlns = "http://www.w3.org/ns/widgets"
-    	xmlns:gap = "http://phonegap.com/ns/1.0"
-    	xmlns:android = "http://schemas.android.com/apk/res/android"
-    	id = "co.com.softcomputo.solicitudcitasaludsion"
-    	versionCode=""
-    	version = "1.2.1">
-	<name>Solicitud de Citas Salud Sion</name>
-	<description>Solicitud de citas salud sion</description>
-	<author href="http://softcomputo.com.co" email="jgomez.softcomputo@gmail.com">Jhonny Gomez</author>
-	<plugin name="cordova-plugin-device" source="npm" spec="~1.1.1" />
-	<plugin name="cordova-plugin-dialogs" source="npm" spec="~1.2.0" />
-	<plugin name="cordova-plugin-inappbrowser" source="npm" spec="~1.3.0" />
-	<plugin name="cordova-plugin-network-information" source="npm" spec="~1.2.0" />
-	<plugin name="cordova-plugin-vibration" source="npm" spec="~2.1.0" />
-	<preference name="phonegap-version" value="cli-6.3.0" />
-	<preference name="android-build-tool" value="gradle" />
-	<preference name="orientation" value="default" />
-	<preference name="fullscreen" value="false" />
-	<preference name="target-device" value="universal" />
-	<preference name="webviewbounce" value="true" />
-	<preference name="prerendered-icon" value="false" />
-	<preference name="stay-in-webview" value="true" />
-	<preference name="ios-statusbarstyle" value="default" />
-	<preference name="detect-data-types" value="true" />
-	<preference name="exit-on-suspend" value="true" />
-	<preference name="EnableViewportScale" value="false" />
-	<preference name="MediaPlaybackRequiresUserAction" value="false" />
-	<preference name="AllowInlineMediaPlayback" value="true" />
-	<preference name="BackupWebStorage" value="none" />
-	<preference name="TopActivityIndicator" value="white" />
-	<preference name="KeyboardDisplayRequiresUserAction" value="true" />
-	<preference name="KeyboardShrinksView" value="true" />
-	<preference name="HideKeyboardFormAccessoryBar" value="true" />
-	<preference name="SuppressesIncrementalRendering" value="false" />
-	<preference name="windows-identity-name" value="" />
-	<preference name="android-minSdkVersion" value="14" />
-	<preference name="android-installLocation" value="auto" />
-	<preference name="ErrorUrl" value="null" />
-	<preference name="BackgroundColor" value="0xffffff" />
-	<preference name="DisallowOverscroll" value="true" />
-	<preference name="LoadingDialog" value="," />
-	<preference name="LoadUrlTimeoutValue" value="null" />
-	<platform name="android">
-    	<icon src="www/res/icon/android/mipmap-ldpi/ic_launcher.png" qualifier="ldpi" />
-    	<icon src="www/res/icon/android/mipmap-mdpi/ic_launcher.png" qualifier="mdpi" />
-    	<icon src="www/res/icon/android/mipmap-hdpi/ic_launcher.png" qualifier="hdpi" />
-    	<icon src="www/res/icon/android/mipmap-xhdpi/ic_launcher.png" qualifier="xhdpi" />
-    	<icon src="www/res/icon/android/mipmap-xxhdpi/ic_launcher.png" qualifier="xxhdpi" />
-    	<icon src="www/res/icon/android/mipmap-xxxhdpi/ic_launcher.png" qualifier="xxxhdpi" />
-	</platform>
-	<icon src="www/res/icon/android/mipmap-xxxhdpi/ic_launcher.png" />
-	<allow-intent href="http://*/*" />
-	<allow-intent href="https://*/*" />
-	<allow-intent href="tel:*" />
-	<allow-intent href="sms:*" />
-	<allow-intent href="mailto:*" />
-	<allow-intent href="geo:*" />
-	<platform name="android" >
-	   <allow-intent href="market:*" />
-	</platform>
+<?xml version='1.0' encoding='utf-8'?>
+<widget
+    id="co.com.softcomputo.solicitudcitasaludsion"
+    version="1.2.1" xmlns="http://www.w3.org/ns/widgets"
+    xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>Solicitud de Citas Salud Sion</name>
+    <description>Solicitud de citas salud sion</description>
+    <author email="jgomez.softcomputo@gmail.com" href="http://softcomputo.com.co">Jhonny Gomez</author>
+    <content src="index.html" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="android-minSdkVersion" value="14" />
+    <plugin name="cordova-plugin-device" source="npm" spec="~1.1.1" />
+    <plugin name="cordova-plugin-dialogs" source="npm" spec="~1.2.0" />
+    <plugin name="cordova-plugin-inappbrowser" source="npm" spec="~1.3.0" />
+    <plugin name="cordova-plugin-network-information" source="npm" spec="~1.2.0" />
+    <plugin name="cordova-plugin-splashscreen" source="npm" spec="~3.2.1" />
+    <plugin name="cordova-plugin-vibration" source="npm" spec="~2.1.0" />
+    <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
+    <platform name="android">
+        <icon density="ldpi" src="www/res/icon/android/mipmap-ldpi/ic_launcher.png" />
+        <icon density="mdpi" src="www/res/icon/android/mipmap-mdpi/ic_launcher.png" />
+        <icon density="hdpi" src="www/res/icon/android/mipmap-hdpi/ic_launcher.png" />
+        <icon density="xhdpi" src="www/res/icon/android/mipmap-xhdpi/ic_launcher.png" />
+        <icon density="xxhdpi" src="www/res/icon/android/mipmap-xxhdpi/ic_launcher.png" />
+        <icon density="xxxhdpi" src="www/res/icon/android/mipmap-xxxhdpi/ic_launcher.png" />
+    </platform>
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+    </platform>
 </widget>
