@@ -1,0 +1,12 @@
+body{
+	color:#777;
+}
+
+.navbar-header img{
+	padding: 5px;
+	width: 300px;
+}
+
+footer{
+	padding-top: 20px;
+}

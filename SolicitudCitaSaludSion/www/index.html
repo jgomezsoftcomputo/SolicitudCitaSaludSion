@@ -11,14 +11,22 @@
 
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="css/main.css">
 </head>
 <body ng-controller="SolicitudCitaController">
+	<nav class="navbar navbar-default">
+		<div class="container">
+    		<div class="navbar-header">
+    			<img src="img/logo.png"/>
+    		</div>
+		</div>
+	</nav>
 	<div class="container app">
 		<h2 class="text-center">Solicitar cita</h2>
 		<form name="formCita" ng-submit="solicitarCita()">
 			<div class="form-group">
 				<label for="identificacion">Identificaci&oacute;n:</label>
-				<input type="text" class="form-control" name="identificacion" id="identificacion" placeholder="Identificaci&oacute;n" ng-model="cita.identificacion" pattern="\d{7,}" oninvalid="setCustomValidity('Debe especificar un formato de identificación válida!!!')" oninput="setCustomValidity('')"/>
+				<input type="text" class="form-control" name="identificacion" id="identificacion" placeholder="Identificaci&oacute;n" ng-model="cita.identificacion" pattern="\d{7,}" oninvalid="setCustomValidity('Debe especificar un formato de identificación válida!!!')" oninput="setCustomValidity('')" required />
 			</div>
 			<div class="form-group">
 				<label for="nombre">Nombre:</label>
@@ -30,7 +38,7 @@
 			</div>
 			<div class="form-group">
 				<label for="telefono">Teléfono:</label>
-				<input type="text" class="form-control" name="telefono" id="telefono" placeholder="Teléfono" ng-model="cita.telefono" pattern="\d{7,}" oninvalid="setCustomValidity('Debe especificar un formato de teléfono válido!!!')" oninput="setCustomValidity('')"/>
+				<input type="text" class="form-control" name="telefono" id="telefono" placeholder="Teléfono" ng-model="cita.telefono" pattern="\d{7,}" oninvalid="setCustomValidity('Debe especificar un formato de teléfono válido!!!')" oninput="setCustomValidity('')" required />
 			</div>
 			<div class="form-group">
 				<label for="aseguradora">Aseguradora:</label>
@@ -51,10 +59,13 @@
 				<input type="date" class="form-control" name="fecha" id="fecha" placeholder="dd/mm/aaaa" required ng-model="cita.fecha" min="{{cita.fechaActual | date:'yyyy-MM-dd'}}"/>
 			</div>
 			<div class="form-group text-center">
-				<input type="submit" class="btn btn-large btn-success" value="Solicitar Cita"/>
+				<input type="submit" class="btn btn-large btn-success btn-lg btn-block" value="Solicitar Cita"/>
 			</div>
 		</form>
 	</div>
+	<footer class="container-fluid bg-4 text-center">
+		<p>Powered By <a href="http://www.softcomputo.com.co"><img src="img/softcomputo.png" width="130px"/></a></p>
+	</footer>
     <script type="text/javascript" src="cordova.js"></script>
 	<script type="text/javascript" src="js/jquery-3.1.1.slim.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
