@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget
     id="co.com.softcomputo.solicitudcitasaludsion"
-    version="1.2.1" xmlns="http://www.w3.org/ns/widgets"
+    version="1.2.2" xmlns="http://www.w3.org/ns/widgets"
     xmlns:gap="http://phonegap.com/ns/1.0">
     <name>Solicitud de Citas Salud Sion</name>
     <description>Solicitud de citas salud sion</description>

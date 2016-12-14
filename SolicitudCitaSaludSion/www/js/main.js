@@ -1,4 +1,4 @@
-var email_ips = "gerencia@softcomputo.com.co";
+var email_ips = "contacto@saludsion.com.co";
 
 var app = angular.module('solicitudCita', []);
 
@@ -12,7 +12,7 @@ app.controller('SolicitudCitaController', ['$scope','$http','$location',function
         $scope.cita.fecha_fmt = moment($scope.cita.fecha).format('DD/MM/YYYY');
 
         $http({
-          url: "https://4505.co/mail.php", 
+          url: "https://saludsion.com.co/mail.php", 
           method: "POST", 
           data: $scope.cita
         }).success(function(data, status) {
